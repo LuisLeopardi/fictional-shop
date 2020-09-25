@@ -86,7 +86,13 @@ main {
         button {
             border-radius: 0 0 0.25rem 0.25rem;
             a {
+                @include flex-center-center;
                 color: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
             }
         }
     }
