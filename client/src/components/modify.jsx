@@ -13,7 +13,7 @@ const Modify = ({canvasRef}) => {
     useEffect(()=>{
         setLoading(true)
         setUpdated(false)
-        axios.get('http://localhost:5000/getNewItemsAdmin', {withCredentials:true})
+        axios.get('https://fictional-shop.herokuapp.com/getNewItemsAdmin', {withCredentials:true})
         .then(res=>{
             const {batteryData,accessoryData,phoneData} = res.data;
             setList({

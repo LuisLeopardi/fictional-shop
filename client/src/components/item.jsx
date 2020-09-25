@@ -14,7 +14,7 @@ class Item extends Component {
     componentDidMount(){
         const parsed = queryString.parse(window.location.search);
         const {id, db} = parsed;
-        axios.post('http://localhost:5000/getItem',{id, db})
+        axios.post('https://fictional-shop.herokuapp.com/getItem',{id, db})
         .then(data=>{
             const {image, price, description, model} = data.data
             this.setState({image, price, description, model})

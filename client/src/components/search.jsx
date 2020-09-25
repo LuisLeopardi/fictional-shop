@@ -15,7 +15,7 @@ const Search = ({history, searchQuery, collection}) => {
         const parsed = queryString.parse(window.location.search);
         const {query, collection} = parsed;
         if(!query || !collection) return history.push('/');
-        axios.post('http://localhost:5000/search',{query:query, collection:collection.toLowerCase()})
+        axios.post('https://fictional-shop.herokuapp.com/search',{query:query, collection:collection.toLowerCase()})
         .then(res=>{
             setLoadingStatus(false);
             if (res.data.result.length === 0) {

@@ -90,7 +90,7 @@ const List = ({array, title, setUpdated, canvasRef}) => {
     }
 
     const deleteItem = () => {
-        axios.post('http://localhost:5000/delete', {id, db}, {withCredentials:true})
+        axios.post('https://fictional-shop.herokuapp.com/delete', {id, db}, {withCredentials:true})
         .then(()=>{
             setUpdated(true)
         })

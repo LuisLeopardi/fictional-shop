@@ -15,7 +15,7 @@ const GetAll = ({history}) => {
         const parsed = queryString.parse(window.location.search);
         const {db} = parsed;
         if(!db) return history.push('/');
-        axios.post('http://localhost:5000/getAllItemsInCollection',{db})
+        axios.post('https://fictional-shop.herokuapp.com/getAllItemsInCollection',{db})
         .then(res=>{
             setLoadingStatus(false);
             setError(null)

@@ -32,7 +32,7 @@ const Edit = ({history}) => {
         fileData.append('price', Number(price));
         fileData.append('stock', Number(stock));
         fileData.append('selected', selected);
-        axios.post('http://localhost:5000/upload', fileData, {withCredentials:true})
+        axios.post('https://fictional-shop.herokuapp.com/upload', fileData, {withCredentials:true})
         .then(res=>{
             setMsg({type:res.data.type, content:res.data.content});
         })
@@ -44,7 +44,7 @@ const Edit = ({history}) => {
 
     const addNewUser = () => {
         setStatus(true);
-        axios.post('http://localhost:5000/newAdmin', {username,password}, {withCredentials:true})
+        axios.post('https://fictional-shop.herokuapp.com/newAdmin', {username,password}, {withCredentials:true})
         .then(res=>setMsg(res.data))
         .catch(err=>{
             const {data} = err.response;
@@ -74,7 +74,7 @@ const Edit = ({history}) => {
     }
 
     const logOut = () => {
-        axios.get('http://localhost:5000/logout', {withCredentials:true})
+        axios.get('https://fictional-shop.herokuapp.com/logout', {withCredentials:true})
         .catch(err=>console.log(err))
         .finally(()=>{
             document.cookie = 'adminSession' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
@@ -88,7 +88,7 @@ const Edit = ({history}) => {
 
     useState(()=>{
         if (auth) return;
-        axios.post('http://localhost:5000/getAuth', {check:true}, {withCredentials:true})
+        axios.post('https://fictional-shop.herokuapp.com/getAuth', {check:true}, {withCredentials:true})
         .then(()=>{
             setAuth(true)
         })

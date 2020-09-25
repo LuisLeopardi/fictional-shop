@@ -19,7 +19,7 @@ const Admin = ({history}) => {
 
         setErrror(null);
 
-        axios.post('http://localhost:5000/admin',{username,password},{withCredentials:true})
+        axios.post('https://fictional-shop.herokuapp.com/admin',{username,password},{withCredentials:true})
         .then(res=>{
             if (res.data.token) {
                 history.push('/admin/edit')
@@ -37,7 +37,7 @@ const Admin = ({history}) => {
     }
 
     useState(()=>{
-        axios.post('http://localhost:5000/getAuth', {auth:true}, {withCredentials:true})
+        axios.post('https://fictional-shop.herokuapp.com/getAuth', {auth:true}, {withCredentials:true})
         .then(res=>{
             if (res.status === 204) return;
             history.push('/admin/edit')

@@ -13,7 +13,7 @@ class FrontPage extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('http://localhost:5000/getNewItems')
+        axios.get('https://fictional-shop.herokuapp.com/getNewItems')
         .then(res=>{  
             const {batteryData,accessoryData,phoneData} = res.data;
             this.setState({
