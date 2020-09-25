@@ -31,10 +31,11 @@ router.post('/', async (req,res)=>{
         model:query.model,
         price:query.price,
         description:query.description,
-        image:query.image
+        image:query.image,
+        stock:query.stock
     }
     
-    res.json(data)
+    res.status(200).json(data)
 
 });
 

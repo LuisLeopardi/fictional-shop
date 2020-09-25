@@ -6,9 +6,10 @@ import queryString from 'query-string';
 class Item extends Component {
     state = {
         image:null,
-        price:0,
+        price:null,
         description:null,
         model:null,
+        stock:null,
         counter:0
     }
     componentDidMount(){
@@ -17,7 +18,7 @@ class Item extends Component {
         axios.post('https://fictional-shop.herokuapp.com/getItem',{id, db})
         .then(data=>{
             const {image, price, description, model} = data.data
-            this.setState({image, price, description, model})
+            this.setState({image, price, description, model, stock})
         })
         .catch(e=>console.log(e))
     }
@@ -48,6 +49,10 @@ class Item extends Component {
                     <p>
                         {description}
                     </p>
+                        {stock} in stock
+                    <p>
+
+                    </p>   
 
                     <div className='counter'>
                         <span>

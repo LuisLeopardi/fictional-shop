@@ -9997,7 +9997,7 @@ main {
   color: #fff;
 }
 .frontpage span {
-  margin: 10vh auto 0 auto;
+  margin: 5vh auto 0 auto;
 }
 .frontpage h2 {
   font-size: 130%;
@@ -10060,6 +10060,15 @@ main {
   font-size: 130%;
 }
 
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.item span {
+  margin: 5vh auto 0 auto;
+}
 .item figure {
   width: 100%;
   display: flex;

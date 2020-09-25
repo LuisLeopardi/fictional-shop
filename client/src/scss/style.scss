@@ -92,7 +92,7 @@ main {
     }
 
     span {
-        margin: 10vh auto 0 auto;
+        margin: 5vh auto 0 auto;
     }
 
     h2 {
@@ -156,6 +156,10 @@ main {
 }
 
 .item {
+    @include flex-center-column;
+    span {
+        margin: 5vh auto 0 auto;
+    }
     figure {
         width: 100%;
         @include flex-center-center

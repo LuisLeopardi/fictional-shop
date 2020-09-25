@@ -3,9 +3,9 @@ const {Battery, Phone, Accessory} = require('../../models/item');
 
 router.get('/', async (req,res)=>{
     
-    const batteryArray = await (await Battery.find({})).splice(0,8);
-    const accessoryArray = await (await Accessory.find({})).splice(0,8);
-    const phoneArray = await (await Phone.find({})).splice(0,8);
+    const batteryArray = await  Battery.find({}).limit(5)
+    const accessoryArray = await Accessory.find({}).limit(5)
+    const phoneArray = await Phone.find({}).limit(5)
 
     const batteryData = batteryArray.map(e=>{
         const batteryStructure = {

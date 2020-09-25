@@ -78,8 +78,6 @@ const Admin = ({history}) => {
                 }
             </Button>
         </span>    
-
-        
     </Form>
     )
 }
