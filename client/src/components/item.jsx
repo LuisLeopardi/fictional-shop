@@ -17,7 +17,7 @@ class Item extends Component {
         const {id, db} = parsed;
         axios.post('https://fictional-shop.herokuapp.com/getItem',{id, db})
         .then(data=>{
-            const {image, price, description, model} = data.data
+            const {image, price, description, model, stock} = data.data
             this.setState({image, price, description, model, stock})
         })
         .catch(e=>console.log(e))
@@ -30,7 +30,7 @@ class Item extends Component {
         return `data:image/jpeg;base64,${image}` 
     }
     render(){
-        const {image, price, description, model, counter} = this.state;
+        const {image, price, description, model, counter, stock} = this.state;
         return (
             image?
             <main className='item'>
