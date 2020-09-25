@@ -9994,7 +9994,16 @@ main {
   border-radius: 0 0 0.25rem 0.25rem;
 }
 .frontpage section button a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 .frontpage span {
   margin: 5vh auto 0 auto;
