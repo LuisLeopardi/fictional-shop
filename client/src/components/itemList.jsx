@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import {Button} from 'react-bootstrap';
 
-window.onresize(()=>{
+window.addEventListener('resize',()=>{
     console.log('resize')
 })
 
