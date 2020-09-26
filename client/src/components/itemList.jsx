@@ -2,6 +2,10 @@ import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import {Button} from 'react-bootstrap';
 
+window.onresize(()=>{
+    console.log('resize')
+})
+
 class ItemList extends Component {
 
     transformIntoImage = data => {    
