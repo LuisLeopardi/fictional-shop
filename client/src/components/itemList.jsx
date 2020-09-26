@@ -15,7 +15,7 @@ class ItemList extends Component {
             console.log(arrayText)
             return arrayText
         } else {
-            return
+            console.log(arrayText)
         }
     }
 
