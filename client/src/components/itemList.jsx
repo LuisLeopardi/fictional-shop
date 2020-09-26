@@ -5,15 +5,17 @@ import {Button} from 'react-bootstrap';
 class ItemList extends Component {
 
     checkSize = (text) => {
+
         const media = matchMedia('(max-width: 600px)');
 
+        console.log(media);
         if (!media) return;
 
         const arrayText = text.trim().split(' ');
 
         if (arrayText.length > 11) {
             arrayText.push('...')
-            const shorted = arrayText.splice(0,13);
+            const shorted = arrayText.splice(0,14);
             return shorted.join(" ");
         } else {
             return arrayText.join(" ");
