@@ -11,9 +11,13 @@ class ItemList extends Component {
 
         const arrayText = text.trim().split(' ');
 
-        if (arrayText.length > 12) arrayText.splice(13,1,'...');
-       
-        return arrayText.join(" ");
+        if (arrayText.length > 11) {
+            arrayText.push('...')
+            const shorted = arrayText.splice(0,13);
+            return shorted.join(" ");
+        } else {
+            return arrayText.join(" ");
+        }
     }
 
     transformIntoImage = data => {    
