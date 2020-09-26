@@ -7,15 +7,13 @@ class ItemList extends Component {
     checkSize = (text) => {
         const media = matchMedia('(max-width: 600px)');
         if (!media) return;
-
-        const arrayText = text.trim().split(' ');
-
         if (arrayText.length > 12) {
-            arrayText.splice(0,13,'...');
+            const arrayText = text.trim().split(' ');
+            arrayText.splice(13,1,'...');
+            arrayText.join(" ");
             return arrayText
         } else {
-            arrayText.join(' ');
-            return arrayText
+            return;
         }
     }
 
