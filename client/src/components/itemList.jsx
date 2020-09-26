@@ -6,15 +6,14 @@ class ItemList extends Component {
 
     checkSize = (text) => {
         const media = matchMedia('(max-width: 600px)');
+
         if (!media) return;
-        if (arrayText.length > 12) {
-            const arrayText = text.trim().split(' ');
-            arrayText.splice(13,1,'...');
-            arrayText.join(" ");
-            return arrayText
-        } else {
-            return;
-        }
+
+        const arrayText = text.trim().split(' ');
+
+        if (arrayText.length > 12) arrayText.splice(13,1,'...');
+       
+        return arrayText.join(" ");
     }
 
     transformIntoImage = data => {    
