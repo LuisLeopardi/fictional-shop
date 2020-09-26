@@ -2,11 +2,21 @@ import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import {Button} from 'react-bootstrap';
 
-window.addEventListener('resize',()=>{
-    console.log('resize')
-})
-
 class ItemList extends Component {
+
+    checkSize = (text) => {
+        const media = matchMedia('(max-width: 600px)');
+        if (!media) return;
+
+        const arrayText = text.trim().split(' ');
+
+        if (arrayText.lenght > 10) {
+            arrayText.splice(0,10).push('...').join(' ');
+            return arrayText
+        } else {
+            return
+        }
+    }
 
     transformIntoImage = data => {    
         const image = btoa(
@@ -28,7 +38,7 @@ class ItemList extends Component {
                                     <img src={`data:image/jpeg;base64,${ this.transformIntoImage(e.image) }`} alt="item"/>
                                 </figure>
                                 <div>
-                                    <Link to={`/item?id=${e.id}&db=${e.db}`}> {e.model} </Link>
+                                    <Link to={`/item?id=${e.id}&db=${e.db}`}> {this.checkSize(e.model)} </Link>
                                     <p> ${e.price} </p>  
                                 </div>        
                             </article>
