@@ -13,8 +13,8 @@ class ItemList extends Component {
 
         const arrayText = text.trim().split(' ');
 
-        if (arrayText.length > 11) {
-            const shorted = arrayText.splice(0,12);
+        if (arrayText.length > 7) {
+            const shorted = arrayText.splice(0,8);
             shorted.push('...')
             return shorted.join(" ");
         } else {
