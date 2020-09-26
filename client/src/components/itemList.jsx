@@ -10,12 +10,12 @@ class ItemList extends Component {
 
         const arrayText = text.trim().split(' ');
 
-        if (arrayText.lenght > 10) {
+        if (arrayText.length > 12) {
             arrayText.splice(0,10).push('...').join(' ');
-            console.log(arrayText)
             return arrayText
         } else {
-            console.log(arrayText)
+            arrayText.join(' ');
+            return arrayText
         }
     }
 
